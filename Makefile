@@ -32,6 +32,9 @@ all : clean
 	$(CP) $(WEB_SERVER_TEMPLATE)/staging/sbin/* $(STAGING)/sbin/
 	$(CP) $(WEB_SERVER_TEMPLATE)/staging/yii/* $(STAGING)/yii/
 	$(CD) $(STAGING)/yii/ && $(TAR) yii-1.1.21.733ac5.tar.gz
+	$(CD) $(STAGING) && tar -cf app.tar bin \
+		etc  htdocs  html  lib  log  logs  run  sbin  tmp  yii && \
+		mv app.tar ../output/
 
 
 
