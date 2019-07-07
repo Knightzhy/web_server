@@ -7,18 +7,20 @@ then
 fi
 
 commod=x$1
+CWD=`dirname "${0}"` ||exit 1
+CWD=`cd "${CWD}"/.. && pwd` || exit 1
 
 if [ $commod == "xstart" ];
 then
-    ./start_php_fpm.sh
-    ./start_nginx.sh
+    ${CWD}/bin/start_php_fpm.sh
+    ${CWD}/bin/start_nginx.sh
     exit 0
 fi
 
 if [ $commod == "xstop" ];
 then
-    ./stop_nginx.sh
-    ./stop_php_fpm.sh
+    ${CWD}/bin/stop_nginx.sh
+    ${CWD}/bin/stop_php_fpm.sh
     exit 0
 fi
 
