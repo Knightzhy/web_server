@@ -1,0 +1,26 @@
+#!/bin/sh
+
+if [ 1 -ne $# ];
+then
+    echo './constol [start|stop]'
+    exit 1
+fi
+
+commod=x$1
+
+if [ $commod == "xstart" ];
+then
+    ./start_php_fpm.sh
+    ./start_nginx.sh
+    exit 0
+fi
+
+if [ $commod == "xstop" ];
+then
+    ./stop_nginx.sh
+    ./stop_php_fpm.sh
+    exit 0
+fi
+
+echo "wrong param"
+exit 1
