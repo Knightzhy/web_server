@@ -19,6 +19,7 @@ all : clean
 	$(CP) $(CWD)/etc/app/web.conf $(STAGING)/etc/app/web.conf
 	$(CP) $(CWD)/etc/php-fpm.d/www.conf $(STAGING)/etc/php-fpm.d/www.conf
 	$(CP) $(CWD)/htdocs $(STAGING)
+	$(CP) $(CWD)/bin/control $(STAGING)/bin/
 	$(CP) $(WEB_SERVER_TEMPLATE)/staging/bin/* $(STAGING)/bin/
 	$(CP) $(WEB_SERVER_TEMPLATE)/staging/etc/fastcgi_params $(STAGING)/etc/
 	$(CP) $(WEB_SERVER_TEMPLATE)/staging/etc/nginx.conf $(STAGING)/etc/
