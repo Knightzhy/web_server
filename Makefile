@@ -17,6 +17,7 @@ all : clean
 	$(CD) $(STAGING) && $(MD) bin  etc etc/app etc/php-fpm.d htdocs \
 		log log/nginx logs run  sbin  tmp  yii html lib
 	$(CP) $(CWD)/etc/app/web.conf $(STAGING)/etc/app/web.conf
+	$(CP) $(CWD)/etc/app/one.conf $(STAGING)/etc/app/one.conf
 	$(CP) $(CWD)/etc/php-fpm.d/www.conf $(STAGING)/etc/php-fpm.d/www.conf
 	$(CP) $(CWD)/htdocs $(STAGING)
 	$(CP) $(CWD)/bin/control $(STAGING)/bin/
